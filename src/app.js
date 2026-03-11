@@ -46,8 +46,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5678/",
-      "https://property.ibigdata.in",
-      "https://propertybulk.ibigdata.in",
+      "https://matri.ibigdata.in",
       
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
