@@ -953,7 +953,7 @@ export const updateCustomer = async (req, res, next) => {
     const existing = await prisma.customer.findUnique({ where: { id } });
     if (!existing) return next(new ApiError(404, "Customer not found"));
 
-    if (admin.role !== "administrator") {
+    if (admin.role !== "administrator" && admin.clientId) {
       if (existing.ClientId !== admin.clientId) {
         return next(
           new ApiError(403, "You cannot modify another company's customer")
